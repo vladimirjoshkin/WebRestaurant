@@ -1,0 +1,38 @@
+.top-menu {
+    width: 100%;
+    height: 70px;
+    background-color: blue;
+    padding: 5px;
+    text-align: center;
+}
+
+.logo-text {
+    display: inline;
+    font-size: 24pt;
+}
+
+.logo-img {
+    height: 60px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #D3D3D3;
+}
+
+/*
+.bottom-menu-list li {
+    display: inline-block;
+}
+
+.bottom-menu-list li a {
+  text-decoration: none;
+  padding: .2em 1em;
+  color: #cbc19e;
+  background-color: #322918;
+  width: calc();
+  display: block;
+}
+*/
+

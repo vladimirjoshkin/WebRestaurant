@@ -1,0 +1,19 @@
+.bottom-menu {
+	background-color: blue;
+}
+
+.bottom-menu-list {
+    margin: auto;
+	padding-bottom: 8px;
+}
+
+.bottom-menu-list li {
+	display: inline-block;
+    list-style: none;
+	text-align: center;
+}
+
+.bottom-menu-list li a {
+    text-decoration: none;
+	color: black;
+}
