@@ -21,6 +21,11 @@ body {
     background: #D3D3D3;
 }
 
+.link-no-style {
+    text-decoration: none;
+	color: black;
+}
+
 /*
 .bottom-menu-list li {
     display: inline-block;
