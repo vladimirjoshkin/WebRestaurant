@@ -1,5 +1,43 @@
 <footer>
-    <p>Контакты</p>
-    <p>Две колонки</p>
-    <p>Социальные сети</p>
+    <div class="container-logo">
+        <img class="logo-img" src="{{ url_for('static', filename='trident.png') }}" alt="Trident">
+    </div>
+    <div class="container-contacts">
+        <p>Контакты</p>
+        <hr/>
+        <p>Контакный телефон: <a target="_blank" rel="noopener noreferrer" href="tel:+73952436605" class="link-no-style">8 (395) 243-66-05.</a></p>
+        <p>E-mail: <a target="_blank" rel="noopener noreferrer" href="mailto:director@restoranchikoff.com" class="link-no-style">director@restoranchikoff.com</a></p>
+        <p>Адрес: <a target="_blank" rel="noopener noreferrer" href="https://yandex.ru/maps/63/irkutsk/house/ulitsa_khalturina_7/ZUkCaAVoTk0OXkJvYWJzeHxjZAk" class="link-no-style">664011, Россия, г. Иркутск, ул. Халтурина, дом 7.</a></p>
+    </div>
+    <div class="container-links">
+        <div class="container-links-left">
+            <ul>
+                <li class="bmf-element"><a href="/index" class="link-no-style">Главная</a></li>
+                <li class="bmf-element"><a href="/menu" class="link-no-style">Меню</a></li>
+                <li class="bmf-element"><a href="/events" class="link-no-style">События</a></li>
+            </ul>
+        </div>
+        <div class="container-links-right">
+            <ul>
+                <li class="bmf-element"><a href="/contacts" class="link-no-style">Контакты</a></li>
+                <li class="bmf-element"><a href="/about-us" class="link-no-style">О ресторане</a></li>
+                <li class="bmf-element"><a href="/booking" class="link-no-style">Бронирование</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-social">
+        <p>Социальные сети</p>
+        <hr/>
+        <a target="_blank" rel="noopener noreferrer" href="instagram.com"><img src="{{ url_for('static', filename='instagram.svg') }}"></a>
+        <a target="_blank" rel="noopener noreferrer" href="vk.com"><img src="{{ url_for('static', filename='vk.svg') }}"></a>
+        <a target="_blank" rel="noopener noreferrer" href="telegram.com"><img src="{{ url_for('static', filename='telegram.svg') }}"></a>
+    </div>
+    <div class="container-copyright">
+        <div class="container-copyright-left">
+            <p>&copy; 2020 Poseidon</p>
+        </div>
+        <div class="container-copyright-right">
+            <p>Designed by enthusiasts from ASUb-17-1</p>
+        </div>
+    </div>
 </footer>
