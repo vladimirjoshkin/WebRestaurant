@@ -6,3 +6,20 @@ footer {
 	width: 100%;
 	height: 80px;
 }
+
+.footer-main {
+	display: flex;
+}
+
+.container-links {
+	display: flex;
+}
+
+.container-copyright {
+    display: flex;
+}
+
+.container-copyright-right {
+    margin-left: auto;
+    text-align: right;
+}
