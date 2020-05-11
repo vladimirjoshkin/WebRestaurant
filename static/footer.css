@@ -11,6 +11,10 @@ footer {
 	display: flex;
 }
 
+.container-logo {
+    margin-top: 16px;
+}
+
 .bmf-element {
     list-style: none;
 }
