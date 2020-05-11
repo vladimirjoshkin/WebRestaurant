@@ -13,6 +13,11 @@ footer {
 
 .container-links {
 	display: flex;
+	margin-left: auto;
+}
+
+.container-social {
+    margin:auto;
 }
 
 .container-copyright {
