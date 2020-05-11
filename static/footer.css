@@ -4,11 +4,23 @@ footer {
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	height: 80px;
+	/* height: 80px; */
 }
 
 .footer-main {
 	display: flex;
+}
+
+.bmf-element {
+    list-style: none;
+}
+
+.bmf-second {
+    margin-top: 25px;
+}
+
+.bmf-right {
+    margin-left: 40px;
 }
 
 .container-links {
@@ -17,14 +29,21 @@ footer {
 }
 
 .container-social {
-    margin:auto;
+    margin-left: auto;
+    margin-right: 50px;
+    width: 30%;
 }
 
 .container-copyright {
     display: flex;
 }
 
+.container-copyright-left {
+    margin-left: 25px;
+}
+
 .container-copyright-right {
     margin-left: auto;
+    margin-right: 50px;
     text-align: right;
 }
