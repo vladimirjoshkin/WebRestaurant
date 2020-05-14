@@ -17,6 +17,7 @@
 }
 
 body {
+    height: 100%;
     margin: 0px;
     padding: 0px;
     background: #D3D3D3;
@@ -34,6 +35,19 @@ h1 {
 h3 {
     text-align: center;
 }
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.content {
+	flex: 1 0 auto;
+}
+footer {
+	flex: 0 0 auto;
+}
+
 /*
 .bottom-menu-list li {
     display: inline-block;
