@@ -1,3 +1,7 @@
 .menu-row {
     text-align: center;
 }
+
+.menu-card {
+    display: inline-block;
+}
