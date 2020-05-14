@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ресторан морской кухни</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='carousel-index.css') }}">
-    <script src="{{ url_for('static', filename='carousel-auto.js') }}"></script>
     {% include 'link_static.html' %}
+    <script src="{{ url_for('static', filename='carousel-auto.js') }}"></script>
 </head>
 <body>
 {% include 'header.html' %}
@@ -19,7 +19,7 @@
 
    <div class="slideshow-container">
 
-<div class="mySlides fade">
+<div class="mySlides fade" style="display: block">
   <div class="numbertext">1 / 3</div>
   <img src="{{ url_for('static', filename='1.png') }}" style="width:100%">
   <div class="text">Caption Text</div>
@@ -27,37 +27,25 @@
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="{{ url_for('static', filename='1.png') }}" style="width:100%">
+  <img src="{{ url_for('static', filename='2.png') }}" style="width:100%">
   <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="{{ url_for('static', filename='1.png') }}" style="width:100%">
+  <img src="{{ url_for('static', filename='3.png') }}" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 
 </div>
 <br>
 
-<div style="text-align:center">
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-</div>
-
 <div class="delivery-container">
     <h1>Заказать доставку</h1>
     <div class="container-img">
        <img class="img-delivery" src="{{ url_for('static', filename='delivery1.png') }}">
-
-
        <img class="img-delivery" src="{{ url_for('static', filename='delivery2.png') }}">
-
-
        <img class="img-delivery" src="{{ url_for('static', filename='delivery3.png') }}">
-
-
        <img class="img-delivery" src="{{ url_for('static', filename='delivery4.png') }}">
     </div>
 </div>
