@@ -11,7 +11,18 @@ I18N_DATABASE_PATH = os.path.join("databases", "i18n.db")
 @app.route("/index")
 def hello():
     return render_template("index.html")
-
+@app.route("/contacts")
+def contacts():
+    return render_template("contacts.html")
+@app.route("/events")
+def events():
+    return render_template("events.html")
+@app.route("/about-us")
+def about_us():
+    return render_template("about-us.html")
+@app.route("/booking")
+def booking():
+    return render_template("booking.html")
 
 @app.context_processor
 def translation_processor():

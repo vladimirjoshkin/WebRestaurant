@@ -9,6 +9,7 @@
     display: inline;
     font-size: 50pt;
     font-family: "Elephant";
+
 }
 
 .logo-img {
@@ -20,14 +21,19 @@ body {
     padding: 0px;
     background: #D3D3D3;
     font-family: "Georgia";
+
 }
 
 .link-no-style {
     text-decoration: none;
 	color: black;
 }
-
-
+h1 {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
 /*
 .bottom-menu-list li {
     display: inline-block;
