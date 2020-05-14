@@ -24,6 +24,11 @@ def about_us():
 def booking():
     return render_template("booking.html")
 
+@app.route("/menu")
+def menu():
+    return render_template("menu.html")
+
+
 @app.context_processor
 def translation_processor():
     def get_translated_string(key_str, lang="ru"):
