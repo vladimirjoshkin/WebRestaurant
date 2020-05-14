@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ресторан морской кухни</title>
+    {% include 'link_static.html' %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+    <script src="{{ url_for('static', filename='menu.js') }}"></script>
+</head>
+<body>
+{% include 'header.html' %}
+
+<div class="menu-body">
+    <div class="menu-row">
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='trident.png') }}" class="menu-img">
+            <p class="menu-heading">Borsch</p>
+            <p class="menu-description">The Great Borsch description is here, and I do not know what to write here, but it must be as long as possible.</p>
+        </div>
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='trident.png') }}" class="menu-img">
+            <p class="menu-heading">Borsch 2</p>
+            <p class="menu-description">The Great Borsch description is here, and I do not know what to write here, but it must be as long as possible.</p>
+        </div>
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='trident.png') }}" class="menu-img">
+            <p class="menu-heading">Borsch 3</p>
+            <p class="menu-description">The Great Borsch description is here, and I do not know what to write here, but it must be as long as possible.</p>
+        </div>
+        <div class="menu-card">
+            <img src="{{ url_for('static', filename='trident.png') }}" class="menu-img">
+            <p class="menu-heading">Borsch 4</p>
+            <p class="menu-description">The Great Borsch description is here, and I do not know what to write here, but it must be as long as possible.</p>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>
