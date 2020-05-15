@@ -69,12 +69,20 @@
 .main-text-container {
      border-bottom: 1px solid gray;
 }
-
 .delivery-container {
-    border-top: 1px solid gray;
-    margin-left:40px;
-    margin-right:40px;
-    margin-bottom:40px;
+    text-align:center;
+}
+
+.delivery-container > div {
+    float: left;
+    width: 21%;
+    margin-right: 2%;
+    margin-left: 2%;
+    padding: 10px;
+    border: 1px solid grey;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 
 
 }
@@ -82,17 +90,16 @@
 
     height:200px;
     width:200px;
-}
-.delivery-row {
-    width:100%;
-    height:1px;
-    clear:both;
-}
-.delivery-container-cells {
-     width:200px;
-     height:200px;
-     float:left;
-     margin: 0 15px 15px 0;
+    }
 
-     padding: 10px;
+.delivery-button {
+     height:50px;
+     width:200px;
+     text-align: center;
 }
+.container-button {
+    text-align: center;
+    margin-bottom:40px;
+    margin-top:40px;
+}
+
