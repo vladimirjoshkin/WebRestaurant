@@ -1,8 +1,11 @@
 .top-menu {
-    background-color: #0779e4;
+    background-color: #ffefcc;
     padding: 5px;
     text-align: center;
     border-bottom: 1px solid black;
+}
+header{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .logo-text {
@@ -22,6 +25,7 @@ body {
     padding: 0px;
     background: #D3D3D3;
     font-family: "Georgia";
+    background-color: #f5f5f0;
 
 }
 

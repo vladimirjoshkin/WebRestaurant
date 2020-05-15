@@ -2,10 +2,13 @@
     width: 800px;
     height:600px;
     margin-left:40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
 .img-sheff {
     width: 800px;
     height:600px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .container-sheff{
     border-bottom: 1px solid gray;
@@ -18,11 +21,13 @@
   max-width: 1000px;
   position: relative;
   margin: auto;
+
 }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
+
 }
 
 /* Next & previous buttons */
@@ -94,6 +99,7 @@
   -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: 1.5s;
+
 }
 
 @-webkit-keyframes fade {

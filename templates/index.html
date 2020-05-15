@@ -25,7 +25,7 @@
   <div class="text">Caption Text</div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides fade" >
   <div class="numbertext">2 / 3</div>
   <img src="{{ url_for('static', filename='2.png') }}" style="width:100%">
   <div class="text">Caption Two</div>
@@ -41,14 +41,32 @@
 <br>
 
 <div class="delivery-container">
-    <h1>Заказать доставку</h1>
-    <div class="container-img">
-       <img class="img-delivery" src="{{ url_for('static', filename='delivery1.png') }}">
-       <img class="img-delivery" src="{{ url_for('static', filename='delivery2.png') }}">
-       <img class="img-delivery" src="{{ url_for('static', filename='delivery3.png') }}">
-       <img class="img-delivery" src="{{ url_for('static', filename='delivery4.png') }}">
-    </div>
+                <h1>Заказать доставку</h1>
+    <div class="delivery-row"></div>
+
+            <div class="delivery-container-cells">
+                <img class="img-delivery" src="{{ url_for('static', filename='delivery1.png') }}">
+                <p>123</p>
+            </div>
+
+            <div class="delivery-container-cells">
+                 <img class="img-delivery" src="{{ url_for('static', filename='delivery2.png') }}">
+                <p>123</p>
+            </div>
+
+            <div class="delivery-container-cells">
+                 <img class="img-delivery" src="{{ url_for('static', filename='delivery3.png') }}">
+                <p>123</p>
+            </div>
+
+            <div class="delivery-container-cells">
+                 <img class="img-delivery" src="{{ url_for('static', filename='delivery4.png') }}">
+                <p>123</p>
+            </div>
+
+    <div class="delivery-row"></div>
 </div>
+
 <!-- Main body -->
 
 {% include 'footer.html' %}
