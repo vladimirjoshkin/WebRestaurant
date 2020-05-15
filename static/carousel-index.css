@@ -6,6 +6,9 @@
   max-width: 1000px;
   position: relative;
   margin: auto;
+
+  border-top: 1px solid black;
+
 }
 
 /* Caption text */
@@ -67,8 +70,12 @@
 }
 
 .main-text-container {
-     border-bottom: 1px solid gray;
-}
+     height:100%;
+     text-align:left;
+     margin-left:40px;
+     margin-right:40px;
+
+ }
 .delivery-container {
     text-align:center;
 }
@@ -102,4 +109,20 @@
     margin-bottom:40px;
     margin-top:40px;
 }
+.container-text {
+    margin-top:20px;
+    float:right;
+    font-size:20pt;
 
+}
+.container-image {
+    margin-left:80px;
+    float:left;
+
+}
+.helper {
+    width:100%;
+    height:1px;
+    clear:both;
+    border-bottom: 1px solid gray;
+}
