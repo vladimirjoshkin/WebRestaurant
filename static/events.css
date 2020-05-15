@@ -1,0 +1,15 @@
+.event-body {
+    text-align: center;
+}
+
+.event-card {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid gray;
+}
+
+.event-image {
+    height: 200px;
+    float: left;
+}

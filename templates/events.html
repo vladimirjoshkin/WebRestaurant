@@ -5,14 +5,32 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>События</title>
-
     {% include 'link_static.html' %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='events.css') }}">
+    <script src="{{ url_for('static', filename='events.js') }}"></script>
+    <title>События</title>
 </head>
 <body>
 {% include 'header.html' %}
 
 <h1>События</h1>
+<div class="events-body">
+    <div class="event-card">
+        <img src="{{ url_for('static', filename='trident.png') }}" class="event-image">
+            <p class="event-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a class="event-link" href="#">Подробнее</a>
+    </div>
+    <div class="event-card">
+        <img src="{{ url_for('static', filename='trident.png') }}" class="event-image">
+            <p class="event-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a class="event-link" href="#">Подробнее</a>
+    </div>
+    <div class="event-card">
+        <img src="{{ url_for('static', filename='trident.png') }}" class="event-image">
+            <p class="event-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a class="event-link" href="#">Подробнее</a>
+    </div>
+</div>
 
 {% include 'footer.html' %}
 </body>
