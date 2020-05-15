@@ -5,11 +5,11 @@
 .menu-card {
     display: inline-block;
     height: 100%;
-    background: #7575a3;
+    background: #f5ebd5;
 }
 
 .menu-card-bottom-area {
-    background: blue;
+    background: #ffd270;
     padding-top: 8px;
     padding-bottom: 8px;
 }
