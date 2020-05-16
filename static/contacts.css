@@ -1,10 +1,18 @@
-.left-container-info{
-
-    margin-left:40px;
+.container-info {
+    display: inline-block;
+    width: 100%;
 }
-.container-google-api{
 
+.left-container-info {
+    margin-left: 40px;
+    float: left;
+}
 
+.right-container-info img {
+    height: 200px;
+    float: right;
+}
+
+.container-google-api {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-
 }
