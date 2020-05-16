@@ -3,15 +3,27 @@
     height:600px;
     margin-left:40px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
 
+}
+.container-kitchen {
+    border-bottom: 1px solid gray;
+}
 .img-sheff {
-    width: 800px;
-    height:600px;
+    width: 600px;
+    height:400px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    float:right;
 }
 .container-sheff{
     border-bottom: 1px solid gray;
+    height:500px;
+}
+.text-container{
+    margin-left:40px;
+    float:left;
+    width: 700px;
+    height:400px;
+    font-size:14pt;
 }
 
 * {box-sizing:border-box}
