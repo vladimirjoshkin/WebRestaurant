@@ -1,7 +1,6 @@
 .bottom-menu {
-    background-color: #ffefcc;
 	text-align: center;
-
+	display: inline-block;
 }
 
 .bottom-menu-list {
@@ -14,4 +13,8 @@
 	display: inline-block;
     list-style: none;
 	text-align: center;
+}
+
+.bottom-menu-list li a {
+    color: white;
 }
