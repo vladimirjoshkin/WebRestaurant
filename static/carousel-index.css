@@ -69,11 +69,13 @@
   .text {font-size: 11px}
 }
 
-.main-text-container {
-     height:100%;
-     text-align:left;
+.main-text-container >div {
+    width:30%;
+    float: left;
+
      margin-left:10%;
      margin-right:10%;
+
 
  }
 .delivery-container {
@@ -110,13 +112,14 @@
     margin-top:40px;
 }
 .container-text {
+
     margin-top:20px;
     float:right;
     font-size:20pt;
 
 }
 .container-image {
-    margin-left:80px;
+
     float:left;
 
 }

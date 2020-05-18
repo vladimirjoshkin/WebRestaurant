@@ -22,6 +22,7 @@
 .container-sheff{
     border-bottom: 1px solid gray;
     height:500px;
+    width:100%
 }
 .text-container{
     margin-left:40px;
