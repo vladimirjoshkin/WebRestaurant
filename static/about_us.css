@@ -1,12 +1,15 @@
 .img-kitchen {
-    width: 800px;
-    height:600px;
+    width: 600px;
+    height:400px;
     margin-left:40px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    float:left;
 
 }
 .container-kitchen {
+    height:600px;
     border-bottom: 1px solid gray;
+
 }
 .img-sheff {
     width: 600px;
@@ -25,7 +28,11 @@
     height:400px;
     font-size:14pt;
 }
-
+.text-kitchen {
+    float:right;
+    width:700px;
+    font-size:14pt;
+}
 * {box-sizing:border-box}
 
 /* Slideshow container */
