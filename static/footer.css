@@ -9,6 +9,7 @@ footer {
 
 .footer-main {
 	display: flex;
+	width: 70%;
 }
 
 .container-logo {
@@ -34,21 +35,20 @@ footer {
 
 .container-social {
     margin-left: auto;
-    margin-right: 50px;
     width: 30%;
 }
 
 .container-copyright {
     display: flex;
+    width: 70%;
 }
 
 .container-copyright-left {
-    margin-left: 25px;
+
 }
 
 .container-copyright-right {
     margin-left: auto;
-    margin-right: 50px;
     text-align: right;
 }
 

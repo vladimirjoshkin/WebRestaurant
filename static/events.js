@@ -9,11 +9,11 @@ $(document).ready(function() {
 
 function repositionCards() {
     $('.event-card').each(function() {
-        $(this).width($(window).width() * 0.85);
-        var c_margin = $(window).width() * (1 - 0.85) / 2;
+        $(this).width($(window).width() * 0.70);
+        var c_margin = $(window).width() * (1 - 0.70) / 2;
         $('.events-body').css('margin-left', c_margin).css('margin-right', c_margin);
     });
 }
 
 $(document).ready(repositionCards);
-$(document).on('resize', repositionCards);
+$(window).on('resize', repositionCards);
