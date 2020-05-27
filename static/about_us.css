@@ -1,18 +1,24 @@
 .img-kitchen {
     width: 600px;
     height:400px;
-    margin-left:40px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    float:left;
+
 
 }
 
 .container-kitchen {
+    display: flex;
     height:600px;
     border-bottom: 1px solid gray;
+    flex-warp:wrap;
+    justify-content: space-around;
 
 }
+.container {
+    margin-left:40px;
+    margin-right:40px;
 
+}
 .img-sheff {
     width: 600px;
     height:400px;
@@ -20,9 +26,13 @@
     float:right;
 }
 .container-sheff{
+    display: flex;
     border-bottom: 1px solid gray;
     height:500px;
     width:100%
+    flex-warp:wrap;
+    justify-content: space-around;
+
 }
 .text-container{
     margin-left:40px;
@@ -36,9 +46,9 @@
     width:700px;
     font-size:14pt;
 }
-* {box-sizing:border-box}
 
-/* Slideshow container */
+
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;

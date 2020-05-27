@@ -130,3 +130,9 @@
     clear:both;
     border-bottom: 1px solid gray;
 }
+.main-text-container {
+    display:flex;
+    flex-warp:wrap;
+    justify-content: space-around;
+
+}

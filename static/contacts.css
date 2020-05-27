@@ -1,6 +1,9 @@
 .container-info {
-    display: inline-block;
+    display: flex;
     width: 100%;
+    flex-warp:wrap;
+    justify-content: space-around;
+
 }
 
 .left-container-info {
