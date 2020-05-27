@@ -4,12 +4,9 @@ function resizeHorizontalMenu() {
     $('.bottom-menu-list').children('li').each(function() {
         $(this).width(bm_li_new_width);
     });
-
     var margin = ($('header').width() - $('.top-menu').width()) / 2;
     $('.top-menu').css('margin-left', margin).css('margin-right', margin);
 };
-
-
 $(document).ready(resizeHorizontalMenu);
 $(window).on('resize', resizeHorizontalMenu)
 
