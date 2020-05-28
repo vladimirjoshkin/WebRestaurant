@@ -20,10 +20,10 @@
 
 }
 .img-sheff {
-    width: 600px;
+    width: 700px;
     height:400px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    float:right;
+
 }
 .container-sheff{
     display: flex;
@@ -34,15 +34,12 @@
     justify-content: space-around;
 
 }
-.text-container{
-    margin-left:40px;
-    float:left;
+.text-container {
     width: 700px;
     height:400px;
     font-size:14pt;
 }
 .text-kitchen {
-    float:right;
     width:700px;
     font-size:14pt;
 }

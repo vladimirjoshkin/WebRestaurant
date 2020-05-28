@@ -15,7 +15,7 @@
     list-style: none;
 	text-align: center;
 	height: 30px;
-    border-bottom: 2px solid gray;
+    /*border-bottom: 2px solid gray;*/
 
 }
 
@@ -26,7 +26,22 @@ li:hover {
     /*outline: 0px solid #ccc;
     outline-offset: 10px;
     outline-color: grey;
-    background: grey;*/
+    background: grey;
     border-bottom: 2px solid white;
+    */
 
+
+
+
+}
+li:after {
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: white;
+     transition: width .3s ease-in-out;
+     }
+li:hover:after,li:focus:after {
+width: 100%;
 }
