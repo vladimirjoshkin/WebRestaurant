@@ -16,6 +16,22 @@
     <div style="width:100%; height:1px; clear:both;"></div>
 <div class="booking-container">
 
+    {% for table in booking_list %}
+    <div class="booking-container-cells">
+        <img class="img-booking" src="/static/booking/{{ table.image_filename }}">
+        <p>{{ table.name }}</p>
+        <p>{{ table.description }}</p>
+        <p>Доступно с {{ table.available_from[0] }}:{{ table.available_from[1] }} по {{ table.available_to[0] }}:{{ table.available_to[1] }}</p>
+        {% if table.reservations|length > 0 %}
+        <p>Зарезервировано:</p>
+        {% for reservation in table.reservations %}
+        <p>{{ reservation.date[2] }}.{{ reservation.date[1] }}.{{ reservation.date[0] }} с {{ reservation._from[0] }}.{{ reservation._from[1] }} по {{ reservation._to[0] }}.{{ reservation._to[1] }}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    <!--
             <div class="booking-container-cells">
                 <img class="img-booking" src="{{ url_for('static', filename='delivery1.png') }}">
 
@@ -92,7 +108,7 @@
                  <img class="img-booking" src="{{ url_for('static', filename='delivery4.png') }}">
 
             </div>
-
+    -->
 
 </div>
 <div style="width:100%; height:1px; clear:both;"></div>

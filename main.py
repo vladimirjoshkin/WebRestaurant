@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, redirect
 import sqlite3
 import os
 from menu import get_product_list
+from booking import get_booking_list
 
 app = Flask(__name__)
 
@@ -31,7 +32,8 @@ def about_us():
 
 @app.route("/booking")
 def booking():
-    return render_template("booking.html")
+    booking_list = get_booking_list()
+    return render_template("booking.html", booking_list=booking_list)
 
 
 @app.route("/menu", methods=['GET'])
