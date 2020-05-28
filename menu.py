@@ -39,7 +39,7 @@ def get_product(product_id, lang='ru'):
     cproduct.dimension = get_dimension(product_sql_tpl[1], lang)
     cproduct.default_amount = product_sql_tpl[2]
     cproduct.image_filename = product_sql_tpl[3]
-    cproduct.price = product_sql_tpl[3]
+    cproduct.price = product_sql_tpl[4]
     conn.close()
     return cproduct
 
