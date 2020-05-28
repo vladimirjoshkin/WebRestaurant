@@ -16,12 +16,12 @@ def get_product_list(lang='ru'):
     curr_elements = 0
     product_list.append([])
     for product_sql_tpl in cur.fetchall():
-        if curr_elements < 4:
-            product_list[sublist_ind].append(get_product(product_sql_tpl[0], lang))
-            curr_elements += 1
-        else:
+        if curr_elements >= 4:
             sublist_ind += 1
+            curr_elements = 0
             product_list.append([])
+        product_list[sublist_ind].append(get_product(product_sql_tpl[0], lang))
+        curr_elements += 1
     print(product_list)
     conn.close()
     return product_list
@@ -39,11 +39,13 @@ def get_product(product_id, lang='ru'):
     cproduct.dimension = get_dimension(product_sql_tpl[1], lang)
     cproduct.default_amount = product_sql_tpl[2]
     cproduct.image_filename = product_sql_tpl[3]
+    cproduct.price = product_sql_tpl[3]
     conn.close()
     return cproduct
 
 
 def get_name(product_id, lang='ru'):
+    print("get_name(product_id=" + str(product_id) + " lang=" + str(lang) +")")
     conn = sqlite3.connect(PRODUCTS_DATABASE_PATH)
     cur = conn.cursor()
     cur.execute("SELECT * FROM translation WHERE product_id_ref = ? AND lang = ?", (product_id, lang))

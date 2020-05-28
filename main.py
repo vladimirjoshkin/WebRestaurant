@@ -36,7 +36,7 @@ def booking():
 
 @app.route("/menu", methods=['GET'])
 def menu():
-    lang = request.args.get('lang', default='en', type=str)
+    lang = request.args.get('lang', default='ru', type=str)
     product_list = get_product_list(lang)
     return render_template("menu.html", product_list=product_list)
 
