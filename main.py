@@ -38,7 +38,7 @@ def booking():
 def menu():
     lang = request.args.get('lang', default='en', type=str)
     product_list = get_product_list(lang)
-    return render_template("menu.html")
+    return render_template("menu.html", product_list=product_list)
 
 
 @app.context_processor

@@ -14,6 +14,22 @@
 {% include 'header.html' %}
 
 <div class="menu-body">
+
+    {% for list in product_list %}
+    <div class="menu-row">
+        {% for product in list %}
+        <div class="menu-card">
+            <img src="/static/menu/{{ product.image_filename }}" class="menu-img">
+            <p class="menu-heading">{{ product.name }}</p>
+            <p class="menu-description">{{ product.description }}</p>
+            <div class="menu-card-bottom-area">
+                <a class="link-no-style" href="/index">Добавить в корзину</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    <!--
     <div class="menu-row">
         <div class="menu-card">
             <img src="{{ url_for('static', filename='trident.png') }}" class="menu-img">
@@ -100,6 +116,7 @@
             </div>
         </div>
     </div>
+    -->
 </div>
 
 {% include 'footer.html' %}

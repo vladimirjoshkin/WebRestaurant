@@ -12,8 +12,16 @@ def get_product_list(lang='ru'):
     conn = sqlite3.connect(PRODUCTS_DATABASE_PATH)
     cur = conn.cursor()
     cur.execute("SELECT * FROM product")
+    sublist_ind = 0
+    curr_elements = 0
+    product_list.append([])
     for product_sql_tpl in cur.fetchall():
-        product_list.append(get_product(product_sql_tpl[0], lang))
+        if curr_elements < 4:
+            product_list[sublist_ind].append(get_product(product_sql_tpl[0], lang))
+            curr_elements += 1
+        else:
+            sublist_ind += 1
+            product_list.append([])
     print(product_list)
     conn.close()
     return product_list
