@@ -6,9 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='booking.css') }}">
-    <script src="{{ url_for('static', filename='text.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='text.js') }}"></script> -->
     <title>Бронирование</title>
     {% include 'link_static.html' %}
+    <script src="{{ url_for('static', filename='booking.js') }}"></script>
 </head>
 <body>
 {% include 'header.html' %}
@@ -17,7 +18,7 @@
 <div class="booking-container">
 
     {% for table in booking_list %}
-    <div class="booking-container-cells">
+    <div class="booking-container-cells" id="booking-container-{{ table.id }}">
         <img class="img-booking" src="/static/booking/{{ table.image_filename }}">
         <p>{{ table.name }}</p>
         <p>{{ table.description }}</p>
@@ -28,6 +29,72 @@
         <p>{{ reservation.date[2] }}.{{ reservation.date[1] }}.{{ reservation.date[0] }} с {{ reservation._from[0] }}.{{ reservation._from[1] }} по {{ reservation._to[0] }}.{{ reservation._to[1] }}</p>
         {% endfor %}
         {% endif %}
+        <a href="#" class="book-table-link" id="book-table-link-{{ table.id }}" onclick="showReservationMenu({{ table.id }})">Зарезервировать</a>
+        <div class="reservation-menu" id="reservation-menu-{{ table.id }}" hidden>
+            <form>
+                <label for="txtTableId">Номер стола:</label>
+                <input type="number" id="txtTableId" name="txtTableId" value="{{ table.id }}" disabled>
+                <label for="dtDate">Дата:</label>
+                {% if date[1] < 10 and date[2] < 10 %}
+                <input type="date" id="dtDate" name="dtDate" value="{{ date[0] }}-0{{ date[1] }}-0{{ date[2] }}">
+                {% else %}
+                    {% if date[1] < 10%}
+                        <input type="date" id="dtDate" name="dtDate" value="{{ date[0] }}-0{{ date[1] }}-{{ date[2] }}">
+                    {% else %}
+                        {% if date[2] < 10 %}
+                            <input type="date" id="dtDate" name="dtDate" value="{{ date[0] }}-{{ date[1] }}-0{{ date[2] }}">
+                        {% else %}
+                            <input type="date" id="dtDate" name="dtDate" value="{{ date[0] }}-{{ date[1] }}-{{ date[2] }}">
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+                <div>
+                    C
+                    <select id="slcFromHour">
+                        {% for hour in range(24) %}
+                        {% if hour < 10 %}
+                        <option>0{{ hour }}</option>
+                        {% else %}
+                        <option>{{ hour }}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    :
+                    <select id="slcFromMinute" disabled>
+                        {% for minute in range(60) %}
+                        {% if minute < 10 %}
+                        <option>0{{ minute }}</option>
+                        {% else %}
+                        <option>{{ minute }}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    По
+                    <select id="slcToHour">
+                        {% for hour in range(24) %}
+                        {% if hour < 10 %}
+                        <option>0{{ hour }}</option>
+                        {% else %}
+                        <option>{{ hour }}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    :
+                    <select id="slcToMinute" disabled>
+                        {% for minute in range(60) %}
+                        {% if minute < 10 %}
+                        <option>0{{ minute }}</option>
+                        {% else %}
+                        <option>{{ minute }}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <a href="#" class="confirm-table-{{ table.id }}" onclick="confirmTableBooking({{ table.id }})">Подтвердить</a>
+            </form>
+        </div>
     </div>
     {% endfor %}
 

@@ -2,7 +2,9 @@ from flask import Flask, request, render_template, redirect
 import sqlite3
 import os
 from menu import get_product_list
-from booking import get_booking_list
+from booking import get_booking_list, get_table
+from table import Table
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -33,7 +35,12 @@ def about_us():
 @app.route("/booking")
 def booking():
     booking_list = get_booking_list()
-    return render_template("booking.html", booking_list=booking_list)
+    year = datetime.today().year
+    month = datetime.today().month
+    day = datetime.today().day
+    date = [year, month, day]
+    print(date)
+    return render_template("booking.html", booking_list=booking_list, date=date)
 
 
 @app.route("/menu", methods=['GET'])
@@ -41,6 +48,85 @@ def menu():
     lang = request.args.get('lang', default='ru', type=str)
     product_list = get_product_list(lang)
     return render_template("menu.html", product_list=product_list)
+
+
+def check_table_availiability(table, date, fromHour, toHour):
+    availability = []
+    for reservation in table.reservations:
+        if (reservation.same_date(date)):
+            if (toHour < reservation.get_from_hour()) or (fromHour > reservation.get_to_hour()):
+                availability.append(True)
+            else:
+                availability.append(False)
+    if len(availability) == 0:
+        return True
+    for av in availability:
+        if not av:
+            return False
+    return True
+
+
+@app.route("/reserveTable", methods=['POST'])
+def reserve_table():
+    BOOKING_DATABASE_PATH = os.path.join("databases", "booking.db")
+    tableId = request.args.get('tableId', type=int)
+    date = str(request.args.get('date', type=str))
+    date = [date.split('-')[0], date.split('-')[1], date.split('-')[2]]
+    date = date[0] + "." + date[1] + "." + date[2]
+    fromHour = request.args.get('fromHour', type=int)
+    if(fromHour < 10):
+        fromHour = "0" + fromHour
+    fromMinute = request.args.get('fromMinute', type=int, default=0)
+    toHour = request.args.get('toHour', type=int)
+    if(toHour < 10):
+        toHour = "0" + toHour
+    toMinute = request.args.get('toMinute', type=int, default=0)
+    table = get_table(tableId)
+    if(check_table_availiability(table=table, date=date, fromHour=fromHour, toHour=toHour)):
+        conn = sqlite3.connect(BOOKING_DATABASE_PATH)
+        cur = conn.cursor()
+        cur.execute("INSERT INTO reservation (table_ref, date, _from, _to) VALUES (?, ?, ?, ?)", (tableId, date, str(fromHour) + ":00", str(toHour) + ":00"))
+        conn.commit()
+        cur.execute("SELECT * FROM reservation WHERE table_ref=? AND date=? AND _from=? AND _to=?", (tableId, date, str(fromHour) + ":00", str(toHour) + ":00"))
+        reservation_data = cur.fetchone()
+        text = "Бронирование стола № " + str(reservation_data[1]) + " " + str(reservation_data[2]) + " c " + str(reservation_data[3]) + " по " + str(reservation_data[4]) + " создано.\nНомер бронирования " + str(reservation_data[0]) + "."
+        conn.close()
+        return text
+    else:
+        return "Бронировния на выбранное вами время недоступно. Выберете другое время и (или) дату."
+
+@app.route("/checkReservationAvailable", methods=['GET'])
+def checkReservationAvailable():
+    tableId = request.args.get('tableId', type=int)
+    date = str(request.args.get('date', type=str))
+    date = [date.split('-')[0], date.split('-')[1], date.split('-')[2]]
+    fromHour = request.args.get('fromHour', type=int)
+    fromMinute = request.args.get('fromMinute', type=int)
+    toHour = request.args.get('toHour', type=int)
+    toMinute = request.args.get('toMinute', type=int)
+    table = get_table(tableId)
+    print(table)
+    #if len(table.reservations) == 0:
+    #    return "True"
+    '''
+    availability = []
+    for reservation in table.reservations:
+        if(reservation.same_date(date)):
+            if (toHour < reservation.get_from_hour()) or (fromHour > reservation.get_to_hour()):
+                availability.append(True)
+            else:
+                availability.append(False)
+    if len(availability) == 0:
+        return "True"
+    for av in availability:
+        if not av:
+            return "False"
+    return "True"
+    '''
+    if(check_table_availiability(table=table, date=date, fromHour=fromHour, toHour=toHour)):
+        return "True"
+    else:
+        return "False"
 
 
 @app.context_processor
