@@ -8,15 +8,14 @@
 
 .container-kitchen {
     display: flex;
-    height:600px;
     border-bottom: 1px solid gray;
     flex-warp:wrap;
     justify-content: space-around;
 
+
 }
 .container {
-    margin-left:40px;
-    margin-right:40px;
+
 
 }
 .img-sheff {
@@ -28,20 +27,19 @@
 .container-sheff{
     display: flex;
     border-bottom: 1px solid gray;
-    height:500px;
-    width:100%
-    flex-warp:wrap;
     justify-content: space-around;
+
 
 }
 .text-container {
     width: 700px;
-    height:400px;
     font-size:14pt;
+   flex-shrink:0;
 }
 .text-kitchen {
     width:700px;
     font-size:14pt;
+    flex-shrink:0;
 }
 
 
