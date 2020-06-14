@@ -60,11 +60,14 @@ def card():
     product_list = get_product_list(lang)
     client_id = request.cookies.get('client_id')
     added_product_ids_str = request.cookies.get('added_products')
-    added_product_ids_str = added_product_ids_str.split(',')
-    #print(added_product_ids_str)
-    added_product_ids = []
-    for id_str in added_product_ids_str:
-        added_product_ids.append(int(id_str))
+    if added_product_ids_str and len(added_product_ids_str) > 0:
+        added_product_ids_str = added_product_ids_str.split(',')
+        #print(added_product_ids_str)
+        added_product_ids = []
+        for id_str in added_product_ids_str:
+            added_product_ids.append(int(id_str))
+    else:
+        added_product_ids = []
     response = make_response(render_template("card.html", product_list=product_list, added_product_ids=added_product_ids))
 
     if client_id:
