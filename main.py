@@ -49,9 +49,8 @@ def menu():
     product_list = get_product_list(lang)
     client_id = request.cookies.get('client_id')
     response = make_response(render_template("menu.html", product_list=product_list))
-    if client_id:
-        if not len(client_id) > 0:
-            response.set_cookie('client_id', str(datetime.now()))
+    if not client_id or not len(client_id) > 0:
+        response.set_cookie('client_id', str(datetime.now()))
     return response
 
 @app.route("/card", methods=['GET'])
@@ -70,9 +69,9 @@ def card():
         added_product_ids = []
     response = make_response(render_template("card.html", product_list=product_list, added_product_ids=added_product_ids))
 
-    if client_id:
-        if not len(client_id) > 0:
+    if not client_id or not len(client_id) > 0:
             response.set_cookie('client_id', str(datetime.now()))
+
     return response
 
 def check_table_availiability(table, date, fromHour, toHour):
