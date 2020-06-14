@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ресторан морской кухни</title>
+    {% include 'link_static.html' %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+    <script src="{{ url_for('static', filename='card.js') }}"></script>
+</head>
+<body>
+{% include 'header.html' %}
+<h1>Корзина</h1>
+<div class="card-body">
+
+    {% for id in added_product_ids %}
+    <div class="card-box">
+    {% for list in product_list %}
+        {% for product in list %}
+        {% if id == product.id %}
+        <div class="card" id="card-{{ product.id }}">
+            <img src="/static/menu/{{ product.image_filename }}">
+            <p class="card-heading">{{ product.name }}</p>
+            <p class="card-description">{{ product.description }}</p>
+            <p class="card-description">{{ product.price }} руб.</p>
+            <a href="#" onclick="removeFromCard({{ product.id }})">Удалить</a>
+        </div>
+        {% endif %}
+        {% endfor %}
+    {% endfor %}
+    </div>
+    {% endfor %}
+    <p>Купить</p>
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>

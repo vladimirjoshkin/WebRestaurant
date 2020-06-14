@@ -19,6 +19,15 @@ $(document).ready(function() {
     $($('.menu-row')[$('.menu-row').length - 1]).css('margin-top', '25px').css('margin-bottom', '25px');
 });
 
+var added_products = [];
+
+function addToCard(productId) {
+    if (!added_products.includes(productId)) {
+        added_products.push(productId);
+    }
+    document.cookie = "added_products=" + added_products;
+}
+
 /*
 for (var i = 1; i < $('.menu-row').length - 1; i++) {
     $($('.menu-row')[i]).css('margin-top', '25px').css('margin-bottom', '25px');

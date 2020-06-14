@@ -14,7 +14,6 @@
 {% include 'header.html' %}
 
 <div class="menu-body">
-
     {% for list in product_list %}
     <div class="menu-row">
         {% for product in list %}
@@ -24,7 +23,7 @@
             <p class="menu-description">{{ product.description }}</p>
             <p class="menu-description">{{ product.price }} руб.</p>
             <div class="menu-card-bottom-area">
-                <a class="link-no-style" href="/index">Добавить в корзину</a>
+                <a class="link-no-style link-add-to-card" href="#" onclick="addToCard({{ product.id }})">Добавить в корзину</a>
             </div>
         </div>
         {% endfor %}

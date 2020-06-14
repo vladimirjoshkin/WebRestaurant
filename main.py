@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template, redirect, make_response
 import sqlite3
 import os
 from menu import get_product_list
@@ -47,8 +47,27 @@ def booking():
 def menu():
     lang = request.args.get('lang', default='ru', type=str)
     product_list = get_product_list(lang)
-    return render_template("menu.html", product_list=product_list)
+    client_id = request.cookies.get('client_id')
+    response = make_response(render_template("menu.html", product_list=product_list))
+    if not len(client_id) > 0:
+        response.set_cookie('client_id', str(datetime.now()))
+    return response
 
+@app.route("/card", methods=['GET'])
+def card():
+    lang = request.args.get('lang', default='ru', type=str)
+    product_list = get_product_list(lang)
+    client_id = request.cookies.get('client_id')
+    added_product_ids_str = request.cookies.get('added_products')
+    added_product_ids_str = added_product_ids_str.split(',')
+    #print(added_product_ids_str)
+    added_product_ids = []
+    for id_str in added_product_ids_str:
+        added_product_ids.append(int(id_str))
+    response = make_response(render_template("card.html", product_list=product_list, added_product_ids=added_product_ids))
+    if not len(client_id) > 0:
+        response.set_cookie('client_id', str(datetime.now()))
+    return response
 
 def check_table_availiability(table, date, fromHour, toHour):
     availability = []
