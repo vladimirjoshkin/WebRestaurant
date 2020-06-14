@@ -32,7 +32,11 @@
     {% endfor %}
     </div>
     {% endfor %}
+    {% if added_product_ids | length > 0 %}
     <p>Купить</p>
+    {% else %}
+    <p>Корзина пуста</p>
+    {% endif %}
 </div>
 
 {% include 'footer.html' %}
