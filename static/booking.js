@@ -5,13 +5,15 @@ function showReservationMenu(tableId) {
 
 function confirmTableBooking(tableId) {
 
-    date = $('#dtDate').val();
+    var reservationMenuElement = $('#reservation-menu-' + tableId);
 
-    fromHour = $('#slcFromHour').val();
-    fromMinute = $('#slcFromMinute').val();
+    date = $(reservationMenuElement).find('.dtDate').val();
 
-    toHour = $('#slcToHour').val();
-    toMinute = $('#slcToMinute').val();
+    fromHour = $(reservationMenuElement).find('.slcFromHour').val();
+    fromMinute = $(reservationMenuElement).find('.slcFromMinute').val()
+
+    toHour = $(reservationMenuElement).find('.slcToHour').val();
+    toMinute = $(reservationMenuElement).find('.slcToMinute').val();
 
     if(toHour < fromHour) {
         alert("Некоррестное время.");

@@ -36,21 +36,21 @@
                 <input type="number" id="txtTableId" name="txtTableId" value="{{ table.id }}" disabled>
                 <label for="dtDate">Дата:</label>
                 {% if date[1] < 10 and date[2] < 10 %}
-                <input type="date" id="dtDate" name="dtDate" value="{{ date[0] }}-0{{ date[1] }}-0{{ date[2] }}">
+                <input type="date" class="dtDate" name="dtDate" value="{{ date[0] }}-0{{ date[1] }}-0{{ date[2] }}">
                 {% else %}
                     {% if date[1] < 10%}
-                        <input type="date" id="dtDate" name="dtDate" value="{{ date[0] }}-0{{ date[1] }}-{{ date[2] }}">
+                        <input type="date" class="dtDate" name="dtDate" value="{{ date[0] }}-0{{ date[1] }}-{{ date[2] }}">
                     {% else %}
                         {% if date[2] < 10 %}
-                            <input type="date" id="dtDate" name="dtDate" value="{{ date[0] }}-{{ date[1] }}-0{{ date[2] }}">
+                            <input type="date" class="dtDate" name="dtDate" value="{{ date[0] }}-{{ date[1] }}-0{{ date[2] }}">
                         {% else %}
-                            <input type="date" id="dtDate" name="dtDate" value="{{ date[0] }}-{{ date[1] }}-{{ date[2] }}">
+                            <input type="date" class="dtDate" name="dtDate" value="{{ date[0] }}-{{ date[1] }}-{{ date[2] }}">
                         {% endif %}
                     {% endif %}
                 {% endif %}
                 <div>
                     C
-                    <select id="slcFromHour">
+                    <select class="slcFromHour">
                         {% for hour in range(24) %}
                         {% if hour < 10 %}
                         <option>0{{ hour }}</option>
@@ -60,7 +60,7 @@
                         {% endfor %}
                     </select>
                     :
-                    <select id="slcFromMinute" disabled>
+                    <select class="slcFromMinute" disabled>
                         {% for minute in range(60) %}
                         {% if minute < 10 %}
                         <option>0{{ minute }}</option>
@@ -72,7 +72,7 @@
                 </div>
                 <div>
                     По
-                    <select id="slcToHour">
+                    <select class="slcToHour">
                         {% for hour in range(24) %}
                         {% if hour < 10 %}
                         <option>0{{ hour }}</option>
@@ -82,7 +82,7 @@
                         {% endfor %}
                     </select>
                     :
-                    <select id="slcToMinute" disabled>
+                    <select class="slcToMinute" disabled>
                         {% for minute in range(60) %}
                         {% if minute < 10 %}
                         <option>0{{ minute }}</option>
@@ -92,7 +92,7 @@
                         {% endfor %}
                     </select>
                 </div>
-                <a href="#" class="confirm-table-{{ table.id }}" onclick="confirmTableBooking({{ table.id }})">Подтвердить</a>
+                <a href="#" id="confirm-table-{{ table.id }}" onclick="confirmTableBooking({{ table.id }})">Подтвердить</a>
             </form>
         </div>
     </div>
