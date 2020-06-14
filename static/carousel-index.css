@@ -70,15 +70,7 @@
   .text {font-size: 11px}
 }
 
-.main-text-container >div {
-    width:30%;
-    float: left;
 
-     margin-left:10%;
-     margin-right:10%;
-
-
- }
 .delivery-container {
     text-align:center;
 }
@@ -113,16 +105,14 @@
     margin-top:40px;
 }
 .container-text {
-
+    width:700px;
+    height:200px;
     margin-top:20px;
-    float:right;
     font-size:18pt;
-
+   flex-shrink:0;
 
 }
 .container-image {
-    
-    float:left;
 
 }
 .helper {
@@ -133,7 +123,6 @@
 }
 .main-text-container {
     display:flex;
-    flex-warp:wrap;
     justify-content: space-around;
 
 }

@@ -22,18 +22,7 @@
 .bottom-menu-list li a {
     color: white;
 }
-li:hover {
-    /*outline: 0px solid #ccc;
-    outline-offset: 10px;
-    outline-color: grey;
-    background: grey;
-    border-bottom: 2px solid white;
-    */
 
-
-
-
-}
 li:after {
     display: block;
     content: "";
