@@ -3,6 +3,18 @@ function resizeMenu() {
         var cards_count = $(this).children('.menu-card').length;
         var card_width = ($(window).width() * 0.70 - 25 * cards_count) / cards_count;
         $(this).children('.menu-card').width(card_width);
+        /*
+        var max_height = 0;
+        var cards_heights = [];
+        var row_elements = $(this).children('.menu-card');
+        for(i = 0; i < row_elements.length; i++) {
+            cards_heights[i] = $(row_elements[i]).height();
+        }
+        console.log(row_elements);
+        console.log(cards_heights);
+        max_height = Math.max.apply(null, cards_heights);
+        $(this).children('.menu-card').height(max_height);
+        */
     });
 };
 
