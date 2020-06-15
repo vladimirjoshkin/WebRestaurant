@@ -20,14 +20,15 @@
 }
 .img-sheff {
     width: 700px;
-    height:400px;
+    height:500px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 
 }
 .container-sheff{
     display: flex;
-    border-bottom: 1px solid gray;
+
     justify-content: space-around;
+    margin-bottom:20px;
 
 
 }
@@ -48,6 +49,7 @@
   max-width: 1000px;
   position: relative;
   margin: auto;
+
 
 }
 
@@ -137,4 +139,8 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+.horisontal-line {
+    border-bottom: 1px solid gray;
+    margin-bottom:20px;
 }
