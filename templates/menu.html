@@ -22,8 +22,8 @@
             <p class="menu-heading">{{ product.name }}</p>
             <p class="menu-description">{{ product.description }}</p>
             <p class="menu-description">{{ product.price }} руб.</p>
-            <div class="menu-card-bottom-area">
-                <a class="link-no-style link-add-to-card" href="#" onclick="addToCard({{ product.id }})">Добавить в корзину</a>
+            <div class="menu-card-bottom-area" id="menu-card-bottom-area-{{ product.id }}">
+                <a class="link-no-style link-add-to-card" id="link-add-to-card-{{ product.id }}" href="javascript:;" onclick="addToCard({{ product.id }})">Добавить в корзину</a>
             </div>
         </div>
         {% endfor %}

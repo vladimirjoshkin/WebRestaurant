@@ -26,6 +26,8 @@ function addToCard(productId) {
         added_products.push(productId);
     }
     document.cookie = "added_products=" + added_products;
+    $('#menu-card-bottom-area-' + productId).css('background-color', 'green')
+    $('#link-add-to-card-' + productId).text('Добавлено');
 }
 
 /*
