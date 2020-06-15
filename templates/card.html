@@ -7,14 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ресторан морской кухни</title>
     {% include 'link_static.html' %}
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='card.css') }}">
     <script src="{{ url_for('static', filename='card.js') }}"></script>
 </head>
 <body>
 {% include 'header.html' %}
 <h1>Корзина</h1>
 <div class="card-body">
-
     {% for id in added_product_ids %}
     <div class="card-box">
     {% for list in product_list %}
@@ -22,10 +21,12 @@
         {% if id == product.id %}
         <div class="card" id="card-{{ product.id }}">
             <img src="/static/menu/{{ product.image_filename }}">
-            <p class="card-heading">{{ product.name }}</p>
-            <p class="card-description">{{ product.description }}</p>
-            <p class="card-description">{{ product.price }} руб.</p>
-            <a href="#" onclick="removeFromCard({{ product.id }})">Удалить</a>
+            <div class="card-text">
+                <p class="card-heading">{{ product.name }}</p>
+                <p class="card-description">{{ product.description }}</p>
+                <p class="card-description">{{ product.price }} руб.</p>
+                <a href="#" onclick="removeFromCard({{ product.id }})">Удалить</a>
+            </div>
         </div>
         {% endif %}
         {% endfor %}
@@ -33,7 +34,7 @@
     </div>
     {% endfor %}
     {% if added_product_ids | length > 0 %}
-    <p>Купить</p>
+    <a id="proceed-order-button" href="javascript:;">Оформить заказ</a>
     {% else %}
     <p>Корзина пуста</p>
     {% endif %}

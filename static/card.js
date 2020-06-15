@@ -17,3 +17,9 @@ function removeFromCard(productId) {
     document.cookie = "added_products=" + added_products;
 }
 
+$(document).ready(function() {
+    $('#proceed-order-button').click(function() {
+        alert("This part is out of Web course.")
+    });
+})
+
