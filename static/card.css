@@ -16,3 +16,9 @@
 .card img {
     height: 100%;
 }
+
+#proceed-order-button-box {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
